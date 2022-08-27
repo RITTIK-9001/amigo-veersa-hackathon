@@ -1,0 +1,12 @@
+export 'screens/accountPage.dart';
+export 'screens/chatPage.dart';
+export 'screens/doctorPage.dart';
+export 'screens/doctorProfilePage.dart';
+export 'screens/home.dart';
+export 'screens/homePage.dart';
+export 'screens/heartSpecialist.dart';
+export 'screens/dentist.dart';
+export 'screens/physician.dart';
+export 'screens/physioTherapist.dart';
+export 'screens/signIn.dart';
+export 'screens/verification.dart';
