@@ -24,7 +24,7 @@ class _DoctorPageState extends State<DoctorPage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text(
-          "Doctors",
+          "Doctors Near You",
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
         actions: [

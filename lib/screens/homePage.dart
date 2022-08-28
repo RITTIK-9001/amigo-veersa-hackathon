@@ -176,15 +176,81 @@ class _HomePageState extends State<HomePage> {
                 PopularDoctor(
                   doctor: doctors[1],
                 ),
-                PopularDoctor(
-                  doctor: doctors[2],
-                ),
               ],
             ),
           ),
           SizedBox(
             height: 20,
           ),
+          Row(children: [
+            Flexible(
+              child: Container(
+                margin: const EdgeInsets.only(top: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Flexible(
+                      child: MaterialButton(
+                        hoverColor: Colors.blue,
+                        textColor: Colors.black,
+                        color: Colors.blue,
+                        onPressed: () {
+                          Navigator.pushNamed(context, AppRouts.MAPSCREEN);
+                        },
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(2),
+                        ),
+                        child: const Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 50),
+                            child: Text("GIVE YOUR LOCATION",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15))),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ]),
+          SizedBox(
+            height: 20,
+          ),
+          Row(children: [
+            Flexible(
+              child: Container(
+                margin: const EdgeInsets.only(top: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Flexible(
+                      child: MaterialButton(
+                        hoverColor: Colors.blue,
+                        textColor: Colors.black,
+                        color: Colors.blue,
+                        onPressed: () {
+                          Navigator.pushNamed(context, AppRouts.DOCTORPAGE);
+                        },
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(2),
+                        ),
+                        child: const Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 50),
+                            child: Text("GET DOCTOR'S CLINIC NEAR YOU",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15))),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ]),
         ]),
       ),
     );

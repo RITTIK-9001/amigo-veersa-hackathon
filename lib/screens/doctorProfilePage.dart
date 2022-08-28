@@ -30,16 +30,6 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
         ),
       ),
       body: getBody(),
-
-      // floatingActionButton: Padding(
-      //   padding: const EdgeInsets.only(left: 20, right: 20),
-      //   child: MyButton(
-      //       disableButton: false,
-      //       bgColor: primary,
-      //       title: "Book an Instant Appointment",
-      //       onTap: () {}),
-      // ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 
@@ -61,14 +51,14 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Dr. Terry Aminoff",
+                  Text("Dr. Aditya Sharma",
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
                   SizedBox(
                     height: 5,
                   ),
                   Text(
-                    "Dentist Specialist",
+                    "Physician",
                     style: TextStyle(color: Colors.grey, fontSize: 14),
                   ),
                 ],
@@ -195,7 +185,7 @@ class _DoctorProfilePageState extends State<DoctorProfilePage> {
                     textColor: Color.fromARGB(255, 250, 250, 250),
                     color: Color.fromARGB(255, 86, 69, 234),
                     onPressed: () {
-                      Navigator.pushNamed(context, AppRouts.HOME);
+                      Navigator.pushNamed(context, AppRouts.APPOINTMENT);
                     },
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2),

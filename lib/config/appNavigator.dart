@@ -15,6 +15,10 @@ import 'package:doctors_appointment/screens/physioTherapist.dart';
 import 'package:doctors_appointment/screens/signIn.dart';
 import 'package:doctors_appointment/screens/signUp.dart';
 import 'package:doctors_appointment/screens/verification.dart';
+import 'package:doctors_appointment/screens/appointment.dart';
+import 'package:doctors_appointment/screens/paymentInfo.dart';
+import 'package:doctors_appointment/screens/paymentConfirmation.dart';
+import 'package:doctors_appointment/screens/bookingList.dart';
 
 // import '../screens/location/MyLocation.dart';
 
@@ -24,7 +28,7 @@ class AppNavigator extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         localizationsDelegates: [],
-        initialRoute: AppRouts.SIGNIN,
+        initialRoute: AppRouts.SPLASHSCREEN,
         routes: <String, WidgetBuilder>{
           AppRouts.HOME: (BuildContext context) => Home(),
           AppRouts.HOMEPAGE: (BuildContext context) => HomePage(),
@@ -39,9 +43,18 @@ class AppNavigator extends StatelessWidget {
           AppRouts.PHYSIOTHERAPIST: (BuildContext context) => PhysioTherapist(),
           AppRouts.SIGNIN: (BuildContext context) => SignIn(),
           AppRouts.SIGNUP: (BuildContext context) => SignUp(),
-          AppRouts.VERIFICATION: (BuildContext context) => Verification()
-
-          // AppRouts.CUSTOMERPROFILE3: (BuildContext context) => CustomerProfile3(),
+          AppRouts.VERIFICATION: (BuildContext context) => Verification(),
+          AppRouts.APPOINTMENT: (BuildContext context) => Appointment(),
+          AppRouts.BOOKINGCONFIRMATION: (BuildContext context) =>
+              BookingConfirmation(),
+          AppRouts.PAYMENTINFO: (BuildContext context) => PaymentInfo(),
+          AppRouts.PAYMENTCONFIRMATION: (BuildContext context) =>
+              PaymentConfirmation(),
+          AppRouts.BOOKINGLIST: (BuildContext context) => BookingList(),
+          AppRouts.MAPSCREEN: (BuildContext context) => MapScreen(),
+          AppRouts.FORGOTPASSWORD: (BuildContext context) => ForgotPassword(),
+          AppRouts.PROFILE: (BuildContext context) => Profile(),
+          AppRouts.SPLASHSCREEN: (BuildContext context) => SplashScreen(),
         });
   }
 }

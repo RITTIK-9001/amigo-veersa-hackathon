@@ -3,16 +3,17 @@ import 'package:doctors_appointment/config/appRoutes.dart';
 import 'package:doctors_appointment/theme/colors.dart';
 import 'package:doctors_appointment/assets/lableText.dart';
 import 'package:badges/badges.dart';
-import 'package:doctors_appointment/widgets/categoryBox.dart';
 
-class SignIn extends StatefulWidget {
-  const SignIn({Key? key}) : super(key: key);
+import '../widgets/categoryBox.dart';
+
+class ForgotPassword extends StatefulWidget {
+  const ForgotPassword({Key? key}) : super(key: key);
 
   @override
-  _SignInState createState() => _SignInState();
+  _ForgotPasswordState createState() => _ForgotPasswordState();
 }
 
-class _SignInState extends State<SignIn> {
+class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,57 +59,13 @@ class _SignInState extends State<SignIn> {
     ));
   }
 
-  Widget input1(BuildContext context, title, hint, suffix) {
+  Widget input(BuildContext context, title, hint, suffix) {
     var textField = TextField(
       decoration: InputDecoration(
-          hintText: "Username or ID Number",
+          hintText: "9999999999 OR abc@gmail.com",
           filled: true,
           suffixIcon: Icon(Icons.account_circle_sharp),
           fillColor: Colors.white,
-          contentPadding:
-              const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-          enabledBorder: const OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(2)),
-              borderSide: BorderSide(color: Colors.white)),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(2)),
-            borderSide: BorderSide(color: Colors.white, width: 1),
-          )),
-    );
-    return (Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        margin: const EdgeInsets.only(top: 10, bottom: 10),
-        child: Column(children: [
-          Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
-                Container(
-                  padding: const EdgeInsets.only(left: 20),
-                  margin: const EdgeInsets.only(bottom: 5),
-                  child: Text(
-                    title,
-                    style: const TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ]),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
-            children: <Widget>[Expanded(child: textField)],
-          ),
-        ])));
-  }
-
-  Widget input2(BuildContext context, title, hint, suffix) {
-    var textField = TextField(
-      decoration: InputDecoration(
-          hintText: hint,
-          filled: true,
-          fillColor: Colors.white,
-          suffixIcon: IconButton(
-              onPressed: () => {}, icon: Icon(Icons.visibility_sharp)),
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
           enabledBorder: const OutlineInputBorder(
@@ -151,51 +108,15 @@ class _SignInState extends State<SignIn> {
         child: Column(children: const [
           Text.rich(TextSpan(children: [
             TextSpan(
-                text: "Don't have an account ?",
+                text: "WELCOME!! RESET YOUR PASSWORD",
                 style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.blue,
                     fontWeight: FontWeight.bold,
                     fontSize: 15
                     // fontStyle: FontStyle.italic,
                     )),
           ]))
         ])));
-  }
-
-  Widget register(BuildContext context, String bText, double textSize,
-      bool paddingV, Color textcolor) {
-    return (Container(
-        padding: paddingV ? const EdgeInsets.all(5) : const EdgeInsets.all(0),
-        // margin: const EdgeInsets.only(top: 150.0),
-        child: Center(
-          child: Text(
-            bText,
-            softWrap: true,
-            style: const TextStyle(
-              color: Color.fromARGB(255, 64, 79, 215),
-              fontWeight: FontWeight.bold,
-              fontSize: 15,
-            ),
-          ),
-        )));
-  }
-
-  Widget skip(BuildContext context, String bText, double textSize,
-      bool paddingV, Color textcolor) {
-    return (Container(
-        padding: paddingV ? const EdgeInsets.all(10) : const EdgeInsets.all(0),
-        margin: EdgeInsets.only(top: 4),
-        child: Center(
-          child: Text(
-            bText,
-            softWrap: true,
-            style: TextStyle(
-              color: Colors.blue,
-              fontWeight: FontWeight.bold,
-              fontSize: 15,
-            ),
-          ),
-        )));
   }
 
   getBody() {
@@ -213,16 +134,14 @@ class _SignInState extends State<SignIn> {
           Row(
             children: [
               Flexible(
-                child: input1(
-                    context, LableText.USERNAME, LableText.USERNAME, false),
+                child: line1(context),
               ),
             ],
           ),
           Row(
             children: [
               Flexible(
-                child: input2(
-                    context, LableText.PASSWORD, LableText.PASSWORD, false),
+                child: input(context, LableText.EOM, LableText.EOM, false),
               ),
             ],
           ),
@@ -239,7 +158,7 @@ class _SignInState extends State<SignIn> {
                         textColor: Colors.black,
                         color: Colors.blue,
                         onPressed: () {
-                          Navigator.pushNamed(context, AppRouts.HOME);
+                          Navigator.pushNamed(context, AppRouts.VERIFICATION);
                         },
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(2),
@@ -247,7 +166,7 @@ class _SignInState extends State<SignIn> {
                         child: const Padding(
                             padding: EdgeInsets.symmetric(
                                 vertical: 15, horizontal: 50),
-                            child: Text("Sign in",
+                            child: Text("SEND OTP",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
@@ -259,36 +178,6 @@ class _SignInState extends State<SignIn> {
               ),
             )
           ]),
-          Row(
-            children: [
-              Flexible(
-                child: line1(context),
-              ),
-            ],
-          ),
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, AppRouts.SIGNUP);
-                },
-                child: register(
-                    context, "IF NEW REGISTER HERE", 20, true, Colors.blue))
-          ]),
-          Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-            InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, AppRouts.HOME);
-                },
-                child: skip(context, "SKIP >>>", 20, true, Colors.blue))
-          ]),
-          Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-            InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, AppRouts.FORGOTPASSWORD);
-                },
-                child:
-                    skip(context, "FORGOT PASSWORD !!!", 20, true, Colors.blue))
-          ])
         ])));
   }
 }

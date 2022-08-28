@@ -169,23 +169,74 @@ class VerificationState extends State<Verification> {
             )));
   }
 
+  Widget input2(BuildContext context, title, hint, suffix) {
+    var textField = TextField(
+      decoration: InputDecoration(
+          hintText: hint,
+          filled: true,
+          fillColor: Colors.white,
+          suffixIcon: IconButton(
+              onPressed: () => {}, icon: Icon(Icons.visibility_sharp)),
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+          enabledBorder: const OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(2)),
+              borderSide: BorderSide(color: Colors.white)),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(2)),
+              borderSide: BorderSide(color: Colors.white, width: 1))),
+    );
+    return (Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        margin: const EdgeInsets.only(top: 10, bottom: 10),
+        child: Column(children: [
+          Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              children: <Widget>[
+                Container(
+                  padding: const EdgeInsets.only(left: 20),
+                  margin: const EdgeInsets.only(bottom: 5),
+                  child: Text(
+                    title,
+                    style: const TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ]),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[Expanded(child: textField)],
+          ),
+        ])));
+  }
+
   getBody() {
     return (Container(
       alignment: Alignment.center,
       padding: const EdgeInsets.all(8.0),
       child: Column(children: [
-        // Row(
-        //   children: [
-        //     Flexible(
-        //       child: input1(context, LableText.ENGINEER_NAME,
-        //           LableText.ENGINEER_NAME, false),
-        //     ),
-        //   ],
-        // ),
         Row(
           children: [
             Flexible(
               child: mid(context),
+            ),
+          ],
+        ),
+        Row(
+          children: [
+            Flexible(
+              child: input2(
+                  context, LableText.NPASSWORD, LableText.PASSWORD, false),
+            ),
+          ],
+        ),
+        Row(
+          children: [
+            Flexible(
+              child: input2(
+                  context, LableText.RPASSWORD, LableText.PASSWORD, false),
             ),
           ],
         ),

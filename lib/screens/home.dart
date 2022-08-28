@@ -1,10 +1,12 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:doctors_appointment/screens/accountPage.dart';
 import 'package:doctors_appointment/screens/chatPage.dart';
+import 'package:doctors_appointment/screens/profile.dart';
 import 'package:doctors_appointment/theme/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'bookingList.dart';
 import 'doctorPage.dart';
 import 'homePage.dart';
 
@@ -20,8 +22,8 @@ class _HomeState extends State<Home> {
     HomePage(),
     DoctorPage(),
     ChatPage(),
-    Container(),
-    Container()
+    BookingList(),
+    Profile(),
   ];
 
   int _currentIndex = 0;

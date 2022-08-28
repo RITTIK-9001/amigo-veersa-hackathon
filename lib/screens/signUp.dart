@@ -4,6 +4,8 @@ import 'package:doctors_appointment/theme/colors.dart';
 import 'package:doctors_appointment/assets/lableText.dart';
 import 'package:badges/badges.dart';
 
+import '../widgets/categoryBox.dart';
+
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
 
@@ -39,25 +41,23 @@ class _SignUpState extends State<SignUp> {
         body: getBody());
   }
 
-  // Widget logoSection(BuildContext context) {
-  //   return (Container(
-  //     margin: const EdgeInsets.only(top: 10),
-  //     child: Row(
-  //         mainAxisAlignment: MainAxisAlignment.center,
-  //         mainAxisSize: MainAxisSize.max,
-  //         children: <Widget>[
-  //           SizedBox(
-  //             height: 150,
-  //             width: 150,
-  //             child: Image.asset(
-  //               'lib/assets/images/MohandeesLogoWhiteBG.PNG',
-  //               height: 100,
-  //               width: 100,
-  //             ),
-  //           )
-  //         ]),
-  //   ));
-  // }
+  Widget logoSection(BuildContext context) {
+    return (Container(
+      margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+      child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            InkWell(
+                onTap: () {},
+                child: CategoryBox(
+                  title: "Welcome to Instant Health Appointment",
+                  icon: Icons.favorite,
+                  color: Colors.red,
+                )),
+          ]),
+    ));
+  }
 
   Widget input1(BuildContext context, title, hint, suffix) {
     var textField = TextField(
@@ -185,11 +185,43 @@ class _SignUpState extends State<SignUp> {
         ])));
   }
 
+  Widget line1(BuildContext context) {
+    return (Container(
+        margin: const EdgeInsets.only(top: 15, bottom: 05),
+        alignment: Alignment.center,
+        child: Column(children: const [
+          Text.rich(TextSpan(children: [
+            TextSpan(
+                text: "WELCOME!! REGISTER YOURSELF",
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15
+                    // fontStyle: FontStyle.italic,
+                    )),
+          ]))
+        ])));
+  }
+
   getBody() {
     return (Container(
         alignment: Alignment.center,
         padding: const EdgeInsets.all(8.0),
         child: Column(children: [
+          Row(
+            children: [
+              Flexible(
+                child: logoSection(context),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Flexible(
+                child: line1(context),
+              ),
+            ],
+          ),
           Row(
             children: [
               Flexible(
@@ -234,6 +266,39 @@ class _SignUpState extends State<SignUp> {
                             padding: EdgeInsets.symmetric(
                                 vertical: 15, horizontal: 50),
                             child: Text("VERIFY OTP",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15))),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ]),
+          Row(children: [
+            Flexible(
+              child: Container(
+                margin: const EdgeInsets.only(top: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Flexible(
+                      child: MaterialButton(
+                        hoverColor: Colors.blue,
+                        textColor: Colors.black,
+                        color: Colors.blue,
+                        onPressed: () {
+                          Navigator.pushNamed(context, AppRouts.HOME);
+                        },
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(2),
+                        ),
+                        child: const Padding(
+                            padding: EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 50),
+                            child: Text("SIGN UP THROUGH GOOGLE",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,

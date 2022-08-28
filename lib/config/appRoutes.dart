@@ -18,6 +18,11 @@ import 'package:doctors_appointment/screens/signin.dart';
 import 'package:doctors_appointment/screens/homepage.dart';
 import 'package:doctors_appointment/screens/signup.dart';
 import 'package:doctors_appointment/screens/verification.dart';
+import 'package:doctors_appointment/screens/appointment.dart';
+import 'package:doctors_appointment/screens/bookingConfirmation.dart';
+import 'package:doctors_appointment/screens/paymentInfo.dart';
+import 'package:doctors_appointment/screens/paymentConfirmation.dart';
+import 'package:doctors_appointment/screens/bookingList.dart';
 
 class AppRouts {
   static const ACCOUNTPAGE = "/accountpage";
@@ -33,4 +38,13 @@ class AppRouts {
   static const SIGNIN = "/signin";
   static const SIGNUP = "/signup";
   static const VERIFICATION = "/verification";
+  static const APPOINTMENT = "/appointment";
+  static const BOOKINGCONFIRMATION = "/bookingconfirmation";
+  static const PAYMENTINFO = "/paymentinfo";
+  static const PAYMENTCONFIRMATION = "/paymentconfirmation";
+  static const BOOKINGLIST = "/bookinglist";
+  static const MAPSCREEN = "/mapscreen";
+  static const FORGOTPASSWORD = "/forgotpassword";
+  static const PROFILE = '/profile';
+  static const SPLASHSCREEN = '/splashscreen';
 }
